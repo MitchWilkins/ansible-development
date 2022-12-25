@@ -1,5 +1,5 @@
 # ansible-development
-A IaaC model using Vagrant and Ansible to help create a virtual development environment.
+An IaaC model using Vagrant and Ansible to help create a virtual development environment.
 
 ## Vagrant
 Helps setup the OS and handles provisioning the VM.
