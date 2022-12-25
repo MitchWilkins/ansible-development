@@ -6,6 +6,18 @@
   become: true
   tasks:
 
+# ssh keys
+    - name: Copy keys with owner and permissions
+      ansible.builtin.copy:
+        src: ~/.ssh/{{item}}
+        dest: /home/{{ remote_user }}/.ssh/{{item}}
+        owner: "{{ remote_user }}"
+        group: "{{ remote_user }}"
+        mode: preserve
+      loop:
+        - id_ecdsa
+        - id_ecdsa.pub
+
 # docker
     - name: install dependencies
       apt:
